@@ -2,12 +2,11 @@
 
 <html>
 	<head>
-	<title>  </title>
+	<title>The Meal Site</title>
 	<style>
 		.header {
-			background-color: skyblue;
 			font-size:24pt;
-			margin:0px;
+			margin:5px;
 			text-align: center
 
 		}
@@ -21,7 +20,9 @@
 		</div>
 			
 		<div class="header">
+		<div style=font-size:18pt;>
 		<p><b>당신은 <mark>밀의 함정<mark/>에 속으셧습니다</b></p>
+		</div>
 		</div>
 		
 
@@ -31,7 +32,7 @@
 		</div>
 		</div>
 		
-		<div style=background-color:orange;font-size:15pt;text-align:center;>
+		<div style=background-color:orange;font-size:10pt;text-align:center;>
 		<p>last update:24/1/12(1년만의 업데이트)</p>
 		</div>
 			
