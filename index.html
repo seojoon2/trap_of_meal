@@ -8,10 +8,52 @@
 						background-color:white;
 						font-size:24pt;
 						margin:5px;
-						text-align: center
+						text-align: center;
+					}
 
-						}
+                    .container {
+                        font-family: monospace;
+                        font-size: 24px;
+                        margin: 10px;
+                        width: 300px;
+                        height: 200px;
+                        outline: dashed 1px rgb(60, 46, 255);
+                        display: flex;
+                        justify-content: center;
+                        margin: 0 auto;
+                    }
+          
+                    .child {
+                        flex-direction: row;
+                        align-items: center;
+                    }
+          
+                    .text-count {
+                        font-size: 50px;
+                        text-align: center;
+                        font-weight : bold;
+                    }
+                    .button-plus {
+                        background-color: rgb(0, 0, 0);
+                        color: white;
+                        font-size: 15px;
+                        width: 100px;
+                        height: 30px;
+                        border: none;
+                        font-weight : bold;
+                    }
+          
+                    .button-minus {
+                      background-color: rgb(0, 0, 0);
+                      color: white;
+                      font-size: 15px;
+                      width: 100px;
+                      height: 30px;
+                      border: none;
+                      font-weight : bold;
+                  }
 			</style>
+            <script src="vue.js"></script>
 	</head>
 
 	<body>
@@ -37,15 +79,27 @@
    			<img src="힛.png" width=200 />
    		</div>
 
-	        <table style="border:0px;margin-left:auto;margin-right:auto;height:30px;width:100px">
-    	        	<tr style="background-color:rgb(255, 214, 160);font-size:6pt;text-align:center;" >
-   	               		<td>
-    	            			<p>last update:24/1/16</p>
-     	        		</td>
-	        	</tr>
-      	        </table>
+
+           <div id="app" class="container">
+            <div>
+                <p class="text-count">{{ myText }}</p>
+                <button class='button-plus' role="button" v-on:click="buttonPlus">Plus</button>  
+                <button class='button-minus' role="button" v-on:click="buttonMinus">Minus</button>  
+            </div>
+        </div>
+
+
+        <table style="border:0px;margin-left:auto;margin-right:auto;height:30px;width:100px">
+            <tr style="background-color:rgb(243, 221, 178);font-size:6pt;text-align:center;" >
+                <td>
+                    <p>last update:24/4/14</p>
+                </td>
+            </tr>
+        </table>
 
 		
+
+                
         
 	</body>
 
@@ -75,4 +129,24 @@ function toggleImage() {
     img.style.opacity = '0';
   }
 }
+
+
+    new Vue({
+        el : '#app',
+        data : {              
+            myText : 0
+        },
+        methods: {
+            buttonPlus() {
+                this.myText++;
+            },
+            buttonMinus() {
+                if (this.myText > 0) {
+                  this.myText--;
+                }
+            }
+        }
+    })
+
+
 </script>
